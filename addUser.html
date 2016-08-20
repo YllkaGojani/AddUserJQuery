@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style type="text/css">
+		body{
+			width:auto;
+		}
+		table{
+			border:1px solid black;
+		}
+		table thead th{
+			padding:10px;
+		}
+		table tbody{
+			height:auto;
+		}
+		form p{
+			width:300px;
+			text-align: right;
+		}
+	</style>
+	<script type="text/javascript" src="jquery.js"></script>
+	<script src="http://code.jquery.com/ui/1.11.4/jquery-ui.min.js" integrity="sha256-xNjb53/rY+WmG+4L6tTl9m6PpqknWZvRt0rO1SRnJzw=" crossorigin="anonymous"></script>
+	<script type="text/javascript">
+		$(document).ready(function(){
+			console.log('working');
+			function addUser(){
+				var value1 = $('#first_name').val();
+				var value2 = $('#last_name').val();
+				var value3 = $('#email').val();
+				var value4 = $('#phone').val();
+				$('#mytable').append('<tr><td>'+value1+'</td><td>'+value2+'</td><td>'+value3+'</td><td>'+value4+'</td></tr>');
+			};
+
+
+			$('form').submit(function(){
+				addUser();
+				return false
+
+			});
+		});
+	</script>
+</head>
+<body>
+	<table>
+		<thead>
+			<th>First Name</th>
+			<th>Last Name</th>
+			<th>Email Address</th>
+			<th>Contact#</th>
+		</thead>
+		<tbody id="mytable">
+			
+		</tbody>
+	</table>
+	<h2>Add User</h2><hr>
+	<form>
+		<p>First Name:<input type="text" name="first_name" id="first_name"></p>
+		<p>Last Name:<input type="text" name="last_name" id="last_name"></p>
+		<p>Email Address:<input type="text" name="email" id="email"></p>
+		<p>Contact No:<input type="tel" name="phone" id="phone"></p>
+		<p><input type="submit" name="Add User"></p>
+	</form>
+</body>
+</html>
